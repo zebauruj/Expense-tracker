@@ -103,7 +103,7 @@ const Summary = () => {
                 </li>
               ))}
             </ul>
-              {/* Bar Chart for Date View */}
+              { /* Bar Chart for Date View */ }
               <Bar data={barChartData} />
           </div>
         )}
