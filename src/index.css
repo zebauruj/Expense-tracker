@@ -1,0 +1,297 @@
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif, "Hind", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue';
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+  padding: 0;
+  color: #333;
+ 
+}
+
+h1, h2 {
+  color: rgb(26,51,106);
+  text-align: center;
+}
+
+button {
+  background-color: rgb(26,51,106);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(166, 210, 226);
+  color: rgb(26,51,106);
+
+}
+
+/* Container to give some spacing */
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.home-page {
+  text-align: center;
+  background-color: aliceblue;
+}
+
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  margin: 10px;
+}
+
+/* Form page styles */
+.expense-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.form-page {
+  background-color: aliceblue;
+}
+
+.form-group {
+  margin: 10px 0;
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: rgb(26,51,106);
+}
+
+input {
+  padding: 8px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid rgb(81,86,90);
+}
+
+/* Responsive layout for form page */
+@media (min-width: 600px) {
+  .expense-form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .form-group {
+    width: 48%;
+  }
+}
+
+/* General table styling for list page */
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.list-page {
+  background-color: white;
+}
+
+.expense-table th, 
+.expense-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.expense-table th {
+  background-color:rgb(26,51,106);
+  color: white;
+  font-weight: bold;
+}
+
+.expense-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.expense-table td button {
+  padding: 8px 12px;
+  background-color: rgb(26,51,106);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.expense-table td button:hover {
+  background-color: rgb(166, 210, 226);
+  color: rgb(26,51,106);
+}
+
+.no-expenses {
+  text-align: center;
+  font-style: bold;
+  padding: 20px;
+  background-color: #dfdbdb;
+}
+
+@media (max-width: 600px) {
+  .expense-table, .expense-table tbody, .expense-table tr, .expense-table td, .expense-table th {
+    display: block;
+  }
+  
+  .expense-table tr {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  .expense-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .expense-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+  }
+
+  .expense-table th {
+    display: none;
+  }
+}
+/* General container for the summary page */
+.view-toggle {
+  display: flex;
+  align-items: center; 
+  margin-bottom: 20px;
+}
+
+.view-toggle label {
+  margin-right: 10px; 
+}
+
+.view-toggle select {
+  padding: 5px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.summary-page {
+  margin-top: 20px;
+  text-align: center;
+  background-color: rgb(221, 225, 227);
+}
+
+.summary-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* Individual summary box styling */
+.summary-box {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+
+}
+
+.summary-box h4 {
+  font-size: 1.5em;
+  color: rgb(26,51,106);
+  margin-bottom: 10px;
+
+}
+
+.total-amount {
+  font-size: 1.5em;
+  color: rgb(74,74,74);
+  margin-top: 10px;
+  font-weight: bold;
+
+}
+
+/* List of expenses by category */
+.category-list ,
+.date-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-list li,
+.date-list li {
+  font-size: 1rem;
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding: 5px 0;
+}
+
+.category-list li span:first-child {
+  font-weight: bold;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .summary-content {
+    flex-direction: column;
+  }
+}
+
+.summary-box canvas {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Back button styling */
+.back-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: rgb(26,51,106);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: rgb(166, 210, 226);
+  color: rgb(26,51,106);
+}
